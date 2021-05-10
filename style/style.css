@@ -28,7 +28,7 @@ body {
 nav {
     width: 100%;
     display: flex;
-    padding: 45px 75px;
+    padding: 20px 15px;
     align-items: center;
     justify-content: space-between;
 }
@@ -127,40 +127,44 @@ nav .menu-btn {
     color: #fff;
     width: 100%;
     display: flex;
-    padding: 0 75px;
+    flex-wrap: wrap;
+    padding: 0 10px;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
 }
 
 .content .description {
     width: 100%;
-    max-width: 410px;
+    max-width: 737px;
     display: flex;
     flex-direction: column;
 }
 
 .description h1 {
     font-weight: 500;
-    font-size: 48px;
+    font-size: 36px;
+    margin-bottom: 25px;
     line-height: 1.28em;
-    margin-bottom: 40px;
     font-family: 'Lora', serif;
 }
 
 .description p {
-    font-size: 24px;
+    width: 100%;
+    max-width: 410px;
+    font-size: 14px;
     line-height: 1.22;
     font-weight: 400;
-    margin-bottom: 48px;
+    margin-bottom: 25px;
     font-family: 'Montserrat', sans-serif;
 }
 
 .description a {
     color: #fff;
-    font-size: 18px;
+    font-size: 14px;
     font-weight: 700;
     line-height: 1.22em;
     text-decoration: none;
+    margin-bottom: 37px;
     font-family: 'Montserrat', sans-serif;
 }
 
@@ -174,14 +178,15 @@ nav .menu-btn {
 
 .view > img {
     z-index: 1;
-    width: 737px;
+    width: 100%;
+    max-width: 737px;
 }
 
 .view .comment {
     position: absolute;
-    bottom: -20%;
-    right: 5%;
-    padding: 18px 30px 34px;
+    bottom: -70px;
+    right: 2%;
+    padding: 10px 20px 20px;
     background-color: #181719;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
@@ -192,8 +197,8 @@ nav .menu-btn {
 }
 
 .comment-header .avatar {
-    width: 50px;
-    height: 50px;
+    width: 36.5px;
+    height: 36.5px;
     border-radius: 50%;
     margin-right: 20px;
 }
@@ -205,20 +210,20 @@ nav .menu-btn {
 }
 
 .comment-info .name {
-    font-size: 14px;
+    font-size: 12px;
 }
 
 .comment-info .role {
     color: #828282;
-    font-size: 12px;
+    font-size: 10px;
 }
 
 .comment .comment-body {
     width: 70%;
     font-weight: 700;
-    font-size: 24px;
+    font-size: 18px;
     line-height: 1.28em;
-    margin-top: 30px;
+    margin-top: 22px;
     font-family: 'Lora', serif;
 }
 
@@ -237,4 +242,58 @@ footer a:link,
 footer a:visited {
     color: #A9A9A9;
     font-weight: bold;
+}
+
+@media only screen and (min-width: 1201px) {
+    nav {
+        max-width: 1400px;
+        padding: 45px 10px;
+    }
+
+    .content {
+        max-width: 1400px;
+        justify-content: space-between;
+    }
+
+    .content .description {
+        max-width: 410px;
+    }
+
+    .description h1 {
+        font-size: 48px;
+        margin-bottom: 40px;
+    }
+
+    .description p {
+        font-size: 24px;
+        margin-bottom: 48px;
+    }
+
+    .description a {
+        font-size: 18px;
+        margin: 0;
+    }
+
+    .comment {
+        right: 5%;
+        bottom: -20%;
+        padding: 18px 30px 34px;
+    }
+
+    .comment-header .avatar {
+        width: 50px;
+        height: 50px;
+    }
+
+    .comment-info .name {
+        font-size: 14px;
+    }
+    
+    .comment-info .role {
+        font-size: 12px;
+    }
+
+    .comment .comment-body {
+        font-size: 24px;
+    }
 }
