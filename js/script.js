@@ -3,7 +3,9 @@ var menuBtn = document.getElementById('menu-btn'),
     mobileStyleWrapper = document.getElementsByTagName('nav')[0],
     width = window.innerWidth;
 
-mobileStyleWrapper.classList.toggle('mobile', width <= 998)
+if (width <= 998) {
+    mobileStyleWrapper.classList.add('mobile')
+}
 
 menuBtn.addEventListener('click', () => {
     menuContainer.classList.toggle('collapsed');
