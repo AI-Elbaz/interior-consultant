@@ -21,6 +21,7 @@ body {
 
 .container {
     display: flex;
+    align-items: center;
     justify-content: center;
 }
 
@@ -32,7 +33,7 @@ nav {
     justify-content: space-between;
 }
 
-nav button {
+nav .main-btn {
     padding: 8px;
     color: #fff;
     height: fit-content;
@@ -47,12 +48,12 @@ nav button {
     transition: 0.3s ease-in-out;
 }
 
-nav button:hover {
+nav .main-btn:hover {
     color: #181719;
     background-color: #fff;
 }
 
-nav ul > li {
+nav .menu > li {
     list-style: none;
     display: inline;
     font-size: 18px;
@@ -67,13 +68,59 @@ li a {
     text-decoration: none;
 }
 
-nav ul > li:first-of-type {
+nav .menu > li:first-of-type {
     margin-left: 0;
 }
 
-nav ul > li.active {
+nav .menu > li.active {
+    width: fit-content;
     padding-bottom: 8px;
     border-bottom: 2px solid #fff;
+}
+
+/* Mobile navbar modifications */
+nav .menu-btn {
+    z-index: 3;
+    width: 30px;
+    border: none;
+    display: none;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.menu-btn .slice {
+    height: 3px;
+    width: 100%;
+    margin-bottom: 5px;
+    background-color: #fff;
+}
+
+.menu-btn .slice:last-of-type {
+    margin-bottom: 0;
+}
+
+.mobile .container {
+    top: 0;
+    left: 0;
+    z-index: 2;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    background-color: #181719;
+}
+
+.mobile .container.collapsed {
+    display: none;
+}
+
+.mobile .menu > li {
+    display: block;
+    margin: 32px auto !important;
+    text-align: center;
+}
+
+.mobile .menu-btn {
+    display: block;
 }
 
 .content {
@@ -117,11 +164,16 @@ nav ul > li.active {
     font-family: 'Montserrat', sans-serif;
 }
 
+.description a span {
+    margin-left: 15px;
+}
+
 .content .view {
     position: relative;
 }
 
 .view > img {
+    z-index: 1;
     width: 737px;
 }
 

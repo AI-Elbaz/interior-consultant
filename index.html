@@ -6,18 +6,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Interior Consultant</title>
   <link rel="stylesheet" href="style/style.css">
+  <script defer src="js/script.js"></script>
 </head>
 <body>
   <div class="page">
     <div class="container">
-      <nav>
-        <button>this interior</button>
-        <ul>
-          <li class="active"><a href="">Home</a></li>
-          <li><a href="">Collection</a></li>
-          <li><a href="">About</a></li>
-          <li><a href="">Contact</a></li>
-        </ul>
+      <nav class="mobile">
+        <button class="main-btn">this interior</button>
+        <button class="menu-btn" id="menu-btn">
+          <div class="slice"></div>
+          <div class="slice"></div>
+          <div class="slice"></div>
+        </button>
+
+        <div class="container collapsed">
+          <ul class="menu">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#">Collection</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
       </nav>
     </div>
 
@@ -31,8 +40,7 @@
             staging company offering professional 
             organizing & eco-services.
           </p>
-  
-          <a href="#">Read more &#8594;</a>
+          <a href="#">Read more <span>&#8594;</span></a>
         </div>
   
         <div class="view">
