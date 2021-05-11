@@ -138,6 +138,10 @@ nav .menu-btn {
     display: block;
 }
 
+.hide {
+    display: none;
+}
+
 .content {
     color: #fff;
     width: 100%;
