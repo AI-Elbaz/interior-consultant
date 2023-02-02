@@ -1,25 +1,20 @@
-const BREAKPOINT = 998;
+const BREAKPOINT = 992;
 
-var menuBtn = document.getElementById('menu-btn'),
-    MenuWrapper = document.querySelector('nav'),
-    MenuContainer = MenuWrapper.querySelector('.container'),
-
-    content = document.querySelectorAll('#main, .MenuWrapper > footer'),
-    width = window.innerWidth;
+let menuBtn = document.getElementById("menu-btn"),
+  MenuWrapper = document.querySelector("nav"),
+  MenuContainer = MenuWrapper.querySelector(".menu-container"),
+  width = window.innerWidth;
 
 if (width <= BREAKPOINT) {
-    MenuWrapper.classList.add('mobile');
+  MenuWrapper.classList.add("mobile");
 }
 
-menuBtn.addEventListener('click', () => {
-    MenuContainer.classList.toggle('collapsed');
-    menuBtn.classList.toggle('opened');
-    content.forEach((e) => {
-        e.classList.toggle('hide');
-    });
+menuBtn.addEventListener("click", () => {
+  MenuContainer.classList.toggle("collapsed");
+  menuBtn.classList.toggle("opened");
 });
 
-window.addEventListener('resize', (e) => {
-    let width = e['target']['innerWidth'];
-    MenuWrapper.classList.toggle('mobile', width <= BREAKPOINT);
-})
+window.addEventListener("resize", (e) => {
+  let width = e.target.innerWidth;
+  MenuWrapper.classList.toggle("mobile", width <= BREAKPOINT);
+});

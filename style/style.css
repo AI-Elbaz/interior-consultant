@@ -20,17 +20,46 @@ body {
 }
 
 .container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    width: 100%;
+    margin: 0 auto;
+    padding-inline: 20px;
+}
+@media only screen and (min-width: 576px) {
+    .container {
+        max-width: 540px;
+    }
+}
+@media only screen and (min-width: 768px) {
+    .container {
+        max-width: 720px;
+    }
+}
+@media only screen and (min-width: 992px) {
+    .container {
+        max-width: 960px;
+    }
+}
+@media only screen and (min-width: 1200px) {
+    .container {
+        max-width: 1140px;
+    }
+}
+@media only screen and (min-width: 1400px) {
+    .container {
+        max-width: 1320px;
+    }
 }
 
 nav {
     width: 100%;
     display: flex;
-    padding: 20px 15px;
+    padding-block: 45px;
     align-items: center;
     justify-content: space-between;
+}
+
+nav .container {
+    display: flex;
 }
 
 nav .main-btn {
@@ -92,14 +121,8 @@ nav .menu-btn {
 .menu-btn .slice {
     height: 3px;
     width: 100%;
-    margin-bottom: 5px;
     background-color: #fff;
-    transition: transform 0.3s ease-in-out;
-}
-
-.menu-btn.menu-btn.opened .slice {
-    margin: 0;
-    position: absolute;
+    transition: all 0.4s ease-in-out;
 }
 
 .menu-btn.opened .slice {
@@ -110,21 +133,20 @@ nav .menu-btn {
     transform: rotate(-45deg);
 }
 
-.menu-btn .slice:last-of-type {
-    margin-bottom: 0;
-}
-
-.mobile .container {
+.mobile .menu-container{
     top: 0;
     left: 0;
     z-index: 2;
+    display: grid;
+    place-items: center;
     width: 100vw;
     height: 100vh;
     position: absolute;
-    background-color: #181719;
+    backdrop-filter: blur(5px);
+    background-color: #181719f2;
 }
 
-.mobile .container.collapsed {
+.mobile .collapsed {
     display: none;
 }
 
@@ -135,7 +157,9 @@ nav .menu-btn {
 }
 
 .mobile .menu-btn {
-    display: block;
+    gap: 6px;
+    display: flex;
+    flex-direction: column;
 }
 
 .hide {
@@ -146,13 +170,13 @@ nav .menu-btn {
     color: #fff;
     width: 100%;
     display: flex;
-    flex-wrap: wrap;
-    padding: 0 10px;
+    gap: 10px;
     align-items: center;
     justify-content: center;
 }
 
 .content .description {
+    flex: 1;
     width: 100%;
     max-width: 737px;
     display: flex;
@@ -192,13 +216,13 @@ nav .menu-btn {
 }
 
 .content .view {
+    flex: 1;
     position: relative;
 }
 
 .view > img {
     z-index: 1;
     width: 100%;
-    max-width: 737px;
 }
 
 .view .comment {
@@ -263,19 +287,23 @@ footer a:visited {
     font-weight: bold;
 }
 
-@media only screen and (min-width: 1201px) {
+@media only screen and (max-width: 992px) {
     nav {
-        max-width: 1400px;
-        padding: 45px 10px;
+        padding-block: 20px;
     }
-
     .content {
-        max-width: 1400px;
-        justify-content: space-between;
+        gap: 0;
+        flex-wrap: wrap;
     }
+    .content > .view,
+    .content > .description {
+        flex: auto;
+    }
+}
 
-    .content .description {
-        max-width: 410px;
+@media only screen and (min-width: 1201px) {
+    .content {
+        justify-content: space-between;
     }
 
     .description h1 {
